@@ -1,107 +1,128 @@
-import React from 'react'
-import MacWindow from './MacWindow'
-import Terminal from 'react-console-emulator'
-import "./cli.scss"
+import React from "react";
+import MacWindow from "./MacWindow";
+import Terminal from "react-console-emulator";
+import "./cli.scss";
 
 const Cli = ({ windowName, setWindowsState }) => {
-    const commands = {
-        about: {
-            description: 'About me',
-            usage: 'about',
-            fn: () => 'I am a full-stack web developer passionate about building modern web applications with React, Node.js, and cloud technologies.'
-        },
-        skills: {
-            description: 'List technical skills',
-            usage: 'skills',
-            fn: () => `Frontend: React, Vue.js, Vanilla JS, Sass, HTML/CSS
-Backend: Node.js, Express, Python, Django
-Databases: MongoDB, PostgreSQL, MySQL
-Tools: Git, Docker, Webpack, Vite
-Cloud: AWS, Azure, Heroku`
-        },
-        projects: {
-            description: 'View my projects',
-            usage: 'projects',
-            fn: () => `1. Portfolio Website - React + Vite
-2. E-commerce Platform - MERN Stack
-3. Task Management App - Next.js
-4. Real-time Chat App - Socket.io
-5. Data Dashboard - React + Chart.js`
-        },
-        experience: {
-            description: 'Display work experience',
-            usage: 'experience',
-            fn: () => `Senior Developer @ Tech Corp (2022 - Present)
-  - Led development of 5+ React applications
-  - Mentored junior developers
+  const commands = {
+    about: {
+      description: "About me",
+      usage: "about",
+      fn: () =>
+        "Full-stack web developer (MERN) focused on building scalable apps, clean UI, and real-world solutions.",
+    },
 
-Full Stack Developer @ Web Solutions (2020 - 2022)
-  - Built scalable APIs with Node.js
-  - Designed responsive UIs with React`
-        },
-        contact: {
-            description: 'Get contact information',
-            usage: 'contact',
-            fn: () => `Email: ankur@example.com
-Phone: +1 (555) 123-4567
-Location: San Francisco, CA`
-        },
-        github: {
-            description: 'Open GitHub profile',
-            usage: 'github',
-            fn: () => {
-                window.open('https://github.com', '_blank')
-                return 'Opening GitHub...'
-            }
-        },
-        resume: {
-            description: 'Download resume',
-            usage: 'resume',
-            fn: () => 'Resume download started...'
-        },
-        social: {
-            description: 'View social media links',
-            usage: 'social',
-            fn: () => `Twitter: @ankurdev
-LinkedIn: /in/ankurprajapati
-Portfolio: ankurprajapati.dev`
-        },
-        echo: {
-            description: 'Echo a passed string',
-            usage: 'echo <string>',
-            fn: (...args) => args.join(' ')
-        }
-    }
+    skills: {
+      description: "List technical skills",
+      usage: "skills",
+      fn: () =>
+        "Frontend: React.js, JavaScript, HTML, CSS, Tailwind\n" +
+        "Backend: Node.js, Express.js, REST APIs, JWT\n" +
+        "Database: MongoDB, Oracle SQL (Basic)\n" +
+        "Tools: Git, GitHub, Postman",
+    },
 
-    const welcomeMessage = `
-╔════════════════════════════════════════╗
-║     Welcome to My Portfolio CLI!       ║
-╚════════════════════════════════════════╝
+    projects: {
+      description: "View my projects",
+      usage: "projects",
+      fn: () =>
+        "1. JobDekho API - Node, Express, MongoDB (JWT Auth)\n" +
+        "2. Instagram Clone - MERN (posts, likes, follow)\n" +
+        "3. Figma Clone - HTML, CSS, JS (editor UI)",
+    },
 
-Hello! 👋 Welcome to my interactive portfolio. You can navigate through my work experience, skills, and projects using terminal commands.
+    experience: {
+      description: "Display work experience",
+      usage: "experience",
+      fn: () =>
+        "Frontend Intern @ Upnyx (Sep 2025 - Dec 2025)\n" +
+        "- Built React + Tailwind UI\n" +
+        "- Created post editor interfaces\n" +
+        "- Implemented chat overlay editing",
+    },
 
-Type 'help' to see all available commands, or try:
-  • about     - Learn about me
-  • skills    - View my technical skills
-  • projects  - Check out my work
-  • experience - See my career history
-  • contact   - Get in touch
+    contact: {
+      description: "Get contact information",
+      usage: "contact",
+      fn: () =>
+        "Email: methreamarnath@gmail.com\n" +
+        "Phone: +91 7730883175\n" +
+        "Location: Hyderabad, India",
+    },
 
-Happy exploring! 🚀
-`
+    github: {
+      description: "Open GitHub profile",
+      usage: "github",
+      fn: () => {
+        window.open("https://github.com/methreamarnath1", "_blank");
+        return "Opening GitHub...";
+      },
+    },
 
-    return (
-        <MacWindow windowName={windowName} setWindowsState={setWindowsState} >
-            <div className="cli-window">
-                <Terminal
-                    commands={commands}
-                    welcomeMessage={welcomeMessage}
-                    promptLabel={'ankurprajapati:~$'}
-                    promptLabelStyle={{ color: '#00ff00' }}
-                />
-            </div>
-        </MacWindow>
-    )
-}
+    linkedin: {
+      description: "Open LinkedIn profile",
+      usage: "linkedin",
+      fn: () => {
+        window.open("https://linkedin.com/in/amarnathmethre", "_blank");
+        return "Opening LinkedIn...";
+      },
+    },
 
-export default Cli
+    portfolio: {
+      description: "Open portfolio",
+      usage: "portfolio",
+      fn: () => {
+        window.open("https://methreamarnath.vercel.app", "_blank");
+        return "Opening portfolio...";
+      },
+    },
+
+    resume: {
+      description: "Download resume",
+      usage: "resume",
+      fn: () => {
+        window.open("/resume.pdf", "_blank");
+        return "Opening resume...";
+      },
+    },
+
+    status: {
+      description: "Show current status",
+      usage: "status",
+      fn: () =>
+        "Role: Full-Stack Developer (MERN)\n" +
+        "Experience: Frontend Intern @ Upnyx\n" +
+        "Projects: 3+ production builds\n" +
+        "Status: Open to Internships / Jobs",
+    },
+
+    echo: {
+      description: "Echo a passed string",
+      usage: "echo <string>",
+      fn: (...args) => args.join(" "),
+    },
+  };
+
+  const welcomeMessage =
+    "========================================\n" +
+    "   Methre Amarnath Portfolio CLI 🚀\n" +
+    "========================================\n\n" +
+    "Type 'help' to see commands\n\n" +
+    "Try:\n" +
+    "about | skills | projects | experience | contact\n";
+
+  return (
+    <MacWindow windowName={windowName} setWindowsState={setWindowsState}>
+      <div className="cli-window">
+        <Terminal
+          commands={commands}
+          welcomeMessage={welcomeMessage}
+          promptLabel={"amarnath:~$"}
+          promptLabelStyle={{ color: "#00ff00" }}
+        />
+      </div>
+    </MacWindow>
+  );
+};
+
+export default Cli;

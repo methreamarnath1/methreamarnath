@@ -14,17 +14,14 @@ body,
 main {
   height: 100%;
   width: 100%;
-
   background-image: url(/image.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
   position: relative;
-
   overflow: hidden;
 }
 
 body {
   background-color: black;
-}
+}/*# sourceMappingURL=app.css.map */
