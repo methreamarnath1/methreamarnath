@@ -417,7 +417,7 @@ function showWelcome() {
     `  <span class="c">Full Stack Dev</span>  <span class="gr">|</span>  <span class="p">MERN Stack</span>  <span class="gr">|</span>  <span class="y">Hyderabad</span>`,
   );
   blank();
-  ln(`  <span class="gr">Portfolio OS v0.3 — Booted successfully.</span>`);
+  ln(`  <span class="gr">Portfolio OS v3.0 — Booted successfully.</span>`);
   ln(`  <span class="gr">Type a command or tap a button below.</span>`);
   blank();
   CMDS.help();
@@ -560,7 +560,7 @@ const bootMsgs = [
   "Mounting file system...",
   "Authenticating Methre Amarnath...",
   "Loading project data...",
-  "Starting terminal — v0.3...",
+  "Starting terminal — v3.0...",
 ];
 const bar = document.getElementById("boot-bar");
 const bmsg = document.getElementById("boot-msg");
