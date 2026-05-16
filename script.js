@@ -534,7 +534,7 @@ function closeDlModal() {
 function doDownload() {
   closeDlModal();
   const a = document.createElement("a");
-  a.href = "methre_amarnath_resume.pdf";
+  a.href = "Methre_Amarnath_Resume.pdf";
   a.download = "Methre_Amarnath_Resume.pdf";
   a.click();
   blank();
