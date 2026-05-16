@@ -2,12 +2,108 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mac-os</title>
+    <title>Methre Amarnath — Portfolio v0.3</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <!-- ════ BOOT ════ -->
+    <div id="boot">
+      <pre class="boot-ascii">
+ ███╗   ███╗███████╗████████╗██╗  ██╗██████╗ ███████╗
+ ████╗ ████║██╔════╝╚══██╔══╝██║  ██║██╔══██╗██╔════╝
+ ██╔████╔██║█████╗     ██║   ███████║██████╔╝█████╗  
+ ██║╚██╔╝██║██╔══╝     ██║   ██╔══██║██╔══██╗██╔══╝  
+ ██║ ╚═╝ ██║███████╗   ██║   ██║  ██║██║  ██║███████╗
+ ╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝</pre
+      >
+      <div class="boot-squares">
+        <div class="boot-sq"></div>
+        <div class="boot-sq"></div>
+        <div class="boot-sq"></div>
+        <div class="boot-sq"></div>
+      </div>
+      <div class="boot-name">Methre <span>Amarnath</span></div>
+      <div class="boot-version">V 0 . 3</div>
+      <div class="boot-sub">Portfolio OS — Full Stack Developer</div>
+      <div class="boot-bar-wrap">
+        <div class="boot-bar-inner" id="boot-bar"></div>
+      </div>
+      <div class="boot-msg" id="boot-msg">Initializing...</div>
+    </div>
+
+    <!-- ════ DESKTOP ════ -->
+    <div id="desktop">
+      <!-- SINGLE CLICK icon -->
+      <div class="desktop-icon" id="open-terminal">
+        <div class="icon-img">▶</div>
+        <div class="icon-label">Portfolio.exe</div>
+      </div>
+
+      <!-- TERMINAL WINDOW -->
+      <div id="terminal-window">
+        <div class="win-titlebar" id="titlebar">
+          <div class="win-title-left">
+            <div class="win-title-dot"></div>
+            <span class="win-title-text">C:\Amarnath\portfolio.exe — v0.3</span>
+          </div>
+          <div class="win-controls">
+            <div class="win-ctrl" id="minimize-btn" title="Minimize">─</div>
+            <div class="win-ctrl" id="maximize-btn" title="Maximize">□</div>
+            <div class="win-ctrl close" id="close-btn" title="Close">✕</div>
+          </div>
+        </div>
+        <div id="term-body">
+          <div id="output"></div>
+          <div class="prompt-line">
+            <span class="g">C:\Portfolio&gt;</span>
+            <input
+              id="cmd-input"
+              type="text"
+              autocomplete="off"
+              spellcheck="false"
+              autofocus
+            />
+            <span class="blink g">█</span>
+          </div>
+          <div class="qbtns" id="qbtns"></div>
+        </div>
+      </div>
+
+      <div class="taskbar">
+        <button class="start-btn" onclick="toggleTerminal()">▶ Start</button>
+        <span class="taskbar-version">PORTFOLIO OS v0.3</span>
+        <div class="taskbar-time" id="clock"></div>
+      </div>
+    </div>
+
+    <!-- ════ DOWNLOAD MODAL ════ -->
+    <div id="dl-modal">
+      <div class="dl-box">
+        <div class="dl-title">
+          <span>↓ Download Resume</span>
+          <div
+            class="win-ctrl close"
+            onclick="closeDlModal()"
+            style="cursor: pointer"
+          >
+            ✕
+          </div>
+        </div>
+        <div class="dl-body">
+          <p>
+            Would you like to download<br /><strong
+              >Methre_Amarnath_Resume.pdf</strong
+            >?
+          </p>
+          <div class="dl-btns">
+            <button class="dl-btn" onclick="doDownload()">Yes</button>
+            <button class="dl-btn" onclick="closeDlModal()">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
